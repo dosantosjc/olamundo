@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revisando</title>
+</head>
+
+<style>
+
+h2#Calculo {
+    margin-top: 10%;
+}
+
+h2#Interagir {
+    margin-top: 15%;
+}
+
+div#Interagir {
+    margin-top: 8%;
+    font-size: 200%;
+}
+
+h2#vel {
+    margin-top: 10%;
+}
+
+input#vel {
+    margin-top: 10%;
+}
+</style>
+
+<body>
+    <h1>Olá, Mundo.</h1>
+
+    <!--Cálculo-->
+    <h2 id="Calculo">Calcule Abaixo</h2>
+    <input type="number" name="n1" id="n1"> +
+    <input type="number" name="n2" id="n2">
+    <input id = "Calcular" type="button" value="Calcular" onclick="Calcular()">
+    <div id="res">Resultado</div>
+    <!--Cálculo-->
+
+
+
+    <!--Interação-->
+    <h2 id="Interaja">Interaja Abaixo</h2>
+    <div id="Interagir">Interaja</div>
+    <!--Interação-->
+
+
+    <!--Teste de Velocidade-->
+    <h2 id="vel">Teste de Velocidade</h2>
+    Digite sua velocidade: <input type="number" name="vel" id="vel">
+    <input type="button" id="Testar" value="Testar" onclick="Testar()">
+    <div id="velres"></div>
+
+    <script>
+
+         var nome = String(window.prompt('Qual o seu nome?'))
+
+        var idade = Number(window.prompt('Qual sua idade?'))
+
+        var nascimento = (window.prompt('Qual sua data de nascimento?'))
+
+        var pergunta = window.prompt(`Olá ${nome}, vamos jogar um jogo?`)
+
+        if (pergunta == 'Sim', 'sim') {
+
+            window.alert('Ok, calcule abaixo.')
+
+        } else {
+
+            window.alert('Ok, até a próxima!') 
+
+        }
+
+
+
+        // Calculos
+
+        function Calcular() {
+        
+        var n1 = Number(document.querySelector("input#n1").value)
+
+        var n2 = Number(document.querySelector("input#n2").value)
+
+        var res = document.querySelector("div#res")
+
+        var s = n1 + n2
+
+        res.innerHTML = (`O resultado entre ${n1} + ${n2} = ${s}`)
+
+        }
+
+        // Calculos
+
+
+
+        // Interação
+
+        var Interagir = document.querySelector('div#Interagir')
+        Interagir.addEventListener('mouseenter', Entrou)
+        Interagir.addEventListener('mousemove', Moveu)
+        Interagir.addEventListener('mousedown', Segurou)
+        Interagir.addEventListener('mouseup', Soltou)
+        Interagir.addEventListener('click', Clickou)
+        Interagir.addEventListener('mouseout', Saiu)
+
+        function Entrou() {
+            Interagir.innerHTML = 'Entrou'
+            Interagir.style.background = 'Green'
+        }
+
+        function Moveu() {
+            Interagir.innerHTML = 'Moveu'
+            Interagir.style.background = 'Yellow'
+        }
+
+        function Segurou() {
+            Interagir.innerHTML = 'Segurou'
+            Interagir.style.background = 'grey'
+        }
+
+        function Soltou() {
+            Interagir.innerHTML = 'Soltou'
+            Interagir.style.background = 'black'
+        }
+
+        function Clickou() {
+            Interagir.innerHTML = 'Clickou'
+            Interagir.style.background = 'blue'
+        }
+
+        function Saiu() {
+            Interagir.innerHTML = 'Saiu'
+            Interagir.style.background = 'red'
+        }
+
+        // Interação
+
+
+        // Teste de Velocidade
+
+        function Testar() {
+        var vel = Number(document.querySelector('input#vel').value)
+        var testar = document.querySelector('input#Testar')
+        var velres = document.querySelector('div#velres')
+        velres.innerhtml = (`Sua velocidade é de ${vel}Km/h.`)
+       if (vel>60) {
+            velres.innerHTML = ('Você foi multado!')
+        }else {
+            velres.innerHTML = ('Dirija dentro dos limites de velocidade!!')
+        }
+s
+        }
+
+        
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>
